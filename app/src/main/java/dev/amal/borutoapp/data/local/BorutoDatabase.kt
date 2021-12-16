@@ -11,8 +11,6 @@ import dev.amal.borutoapp.domain.model.HeroRemoteKeys
 @Database(entities = [Hero::class, HeroRemoteKeys::class], version = 1)
 @TypeConverters(DatabaseConverter::class)
 abstract class BorutoDatabase : RoomDatabase() {
-
     abstract fun heroDao(): HeroDao
     abstract fun heroRemoteKeysDao(): HeroRemoteKeysDao
-
 }

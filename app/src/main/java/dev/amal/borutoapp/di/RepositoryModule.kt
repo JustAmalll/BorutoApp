@@ -10,6 +10,7 @@ import dev.amal.borutoapp.data.repository.DataStoreOperationsImpl
 import dev.amal.borutoapp.data.repository.Repository
 import dev.amal.borutoapp.domain.repository.DataStoreOperations
 import dev.amal.borutoapp.domain.use_cases.UseCases
+import dev.amal.borutoapp.domain.use_cases.get_all_heroes.GetAllHeroesUseCase
 import dev.amal.borutoapp.domain.use_cases.read_onboarding.ReadOnBoardingUseCase
 import dev.amal.borutoapp.domain.use_cases.save_onboarding.SaveOnBoardingUseCase
 import javax.inject.Singleton
@@ -29,6 +30,7 @@ object RepositoryModule {
     fun provideUserCases(repository: Repository): UseCases =
         UseCases(
             saveOnBoardingUserCase = SaveOnBoardingUseCase(repository),
-            readOnBoardingUseCase = ReadOnBoardingUseCase(repository)
+            readOnBoardingUseCase = ReadOnBoardingUseCase(repository),
+            getAllHeroesUseCase = GetAllHeroesUseCase(repository)
         )
 }

@@ -20,7 +20,7 @@ object DatabaseModule {
     @Singleton
     fun provideDatabase(
         @ApplicationContext context: Context
-    ): RoomDatabase =
+    ): BorutoDatabase =
         Room.databaseBuilder(
             context,
             BorutoDatabase::class.java,
