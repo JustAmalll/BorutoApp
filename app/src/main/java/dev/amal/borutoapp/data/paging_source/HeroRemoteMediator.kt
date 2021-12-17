@@ -1,5 +1,6 @@
 package dev.amal.borutoapp.data.paging_source
 
+import android.util.Log
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
@@ -53,7 +54,7 @@ class HeroRemoteMediator @Inject constructor(
                         heroDao.deleteAllHeroes()
                         heroRemoteKeysDao.deleteAllRemoteKeys()
                     }
-                    val prevPage = response.prefPage
+                    val prevPage = response.prevPage
                     val nextPage = response.nextPage
                     val keys = response.heroes.map { hero ->
                         HeroRemoteKeys(
@@ -68,6 +69,7 @@ class HeroRemoteMediator @Inject constructor(
             }
             MediatorResult.Success(endOfPaginationReached = response.nextPage == null)
         } catch (e: Exception) {
+            Log.e("HeroRemoteMediator", e.toString())
             return MediatorResult.Error(e)
         }
     }
