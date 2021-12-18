@@ -1,6 +1,7 @@
 package dev.amal.borutoapp.navigation
 
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
@@ -16,6 +17,7 @@ import dev.amal.borutoapp.presentation.screens.splash.SplashScreen
 import dev.amal.borutoapp.presentation.screens.welcome.WelcomeScreen
 import dev.amal.borutoapp.util.Constants.DETAILS_ARGUMENT_KEY
 
+@ExperimentalMaterialApi
 @ExperimentalCoilApi
 @ExperimentalAnimationApi
 @ExperimentalPagerApi

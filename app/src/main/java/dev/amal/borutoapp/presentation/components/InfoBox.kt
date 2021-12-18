@@ -17,7 +17,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import dev.amal.borutoapp.R
-import dev.amal.borutoapp.ui.theme.INFO_ICON_SIZE
+import dev.amal.borutoapp.ui.theme.DEFAULT_ICON_SIZE
 import dev.amal.borutoapp.ui.theme.SMALL_PADDING
 
 @Composable
@@ -32,7 +32,7 @@ fun InfoBox(
         Icon(
             modifier = Modifier
                 .padding(end = SMALL_PADDING)
-                .size(INFO_ICON_SIZE),
+                .size(DEFAULT_ICON_SIZE),
             painter = icon,
             contentDescription = stringResource(R.string.info_icon),
             tint = iconColor
