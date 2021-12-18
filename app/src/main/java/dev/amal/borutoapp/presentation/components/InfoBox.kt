@@ -16,7 +16,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import dev.amal.borutoapp.R
 import dev.amal.borutoapp.ui.theme.INFO_ICON_SIZE
 import dev.amal.borutoapp.ui.theme.SMALL_PADDING
