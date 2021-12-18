@@ -20,11 +20,13 @@ import dev.amal.borutoapp.R
 import dev.amal.borutoapp.ui.theme.NETWORK_ERROR_ICON_HEIGHT
 import dev.amal.borutoapp.ui.theme.SMALL_PADDING
 import dev.amal.borutoapp.ui.theme.emptyScreenContentColor
+import java.net.ConnectException
+import java.net.SocketTimeoutException
 
 @Composable
 fun EmptyScreen(error: LoadState.Error) {
     val message by remember {
-        mutableStateOf(parseErrorMessage(message = error.toString()))
+        mutableStateOf(parseErrorMessage(error = error))
     }
     val icon by remember {
         mutableStateOf(R.drawable.ic_network_error)
@@ -68,12 +70,12 @@ fun EmptyScreen(error: LoadState.Error) {
     }
 }
 
-fun parseErrorMessage(message: String): String {
-    return when {
-        message.contains("SocketTimeoutException") -> {
+fun parseErrorMessage(error: LoadState.Error): String {
+    return when (error.error) {
+        is SocketTimeoutException -> {
             "Server Unavailable."
         }
-        message.contains("ConnectException") -> {
+        is ConnectException -> {
             "Internet Unavailable."
         }
         else -> {
