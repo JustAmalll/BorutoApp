@@ -74,7 +74,10 @@ fun handlePagingResult(
                 ShimmerEffect()
                 false
             }
-            error != null -> false
+            error != null -> {
+                EmptyScreen(error = error)
+                false
+            }
             else -> true
         }
     }

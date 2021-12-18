@@ -71,3 +71,7 @@ val Colors.shimmerItemBgColor
 val Colors.shimmerItemContentColor
     @Composable
     get() = if (isLight) ShimmerMediumGray else ShimmerDarkGray
+
+val Colors.emptyScreenContentColor
+    @Composable
+    get() = if (isLight) DarkGray else LightGray
