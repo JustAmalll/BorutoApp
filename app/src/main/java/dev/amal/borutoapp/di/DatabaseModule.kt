@@ -9,6 +9,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import dev.amal.borutoapp.data.local.BorutoDatabase
+import dev.amal.borutoapp.data.repository.LocalDataSourceImpl
+import dev.amal.borutoapp.domain.repository.LocalDataSource
 import dev.amal.borutoapp.util.Constants.BORUTO_DATABASE
 import javax.inject.Singleton
 
@@ -26,5 +28,12 @@ object DatabaseModule {
             BorutoDatabase::class.java,
             BORUTO_DATABASE
         ).build()
+
+    @Provides
+    @Singleton
+    fun provideLocalDataSource(
+        database: BorutoDatabase
+    ): LocalDataSource =
+        LocalDataSourceImpl(borutoDatabase = database)
 
 }
