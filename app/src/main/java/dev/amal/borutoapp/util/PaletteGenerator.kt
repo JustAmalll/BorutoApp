@@ -40,15 +40,21 @@ object PaletteGenerator {
         )
     }
 
-    private fun parseColorSwatch(color: Palette.Swatch?): String =
-        if (color != null) {
+    private fun parseColorSwatch(color: Palette.Swatch?): String {
+        return if (color != null) {
             val parsedColor = Integer.toHexString(color.rgb)
-            "#$parsedColor"
-        } else "#000000"
+            return "#$parsedColor"
+        } else {
+            "#000000"
+        }
+    }
 
-    private fun parseBodyColor(color: Int?): String =
-        if (color != null) {
+    private fun parseBodyColor(color: Int?): String {
+        return if (color != null) {
             val parsedColor = Integer.toHexString(color)
-            "#$parsedColor"
-        } else "#FFFFFF"
+            return "#$parsedColor"
+        } else {
+            "#FFFFFF"
+        }
+    }
 }
