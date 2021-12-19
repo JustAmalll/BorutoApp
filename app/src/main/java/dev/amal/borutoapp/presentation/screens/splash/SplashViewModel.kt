@@ -1,6 +1,5 @@
 package dev.amal.borutoapp.presentation.screens.splash
 
-import androidx.compose.runtime.State
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -26,5 +25,4 @@ class SplashViewModel @Inject constructor(
                 useCases.readOnBoardingUseCase().stateIn(viewModelScope).value
         }
     }
-
 }

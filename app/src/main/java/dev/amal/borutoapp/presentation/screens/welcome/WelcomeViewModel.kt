@@ -18,5 +18,4 @@ class WelcomeViewModel @Inject constructor(
             useCases.saveOnBoardingUserCase(completed = completed)
         }
     }
-
 }

@@ -18,7 +18,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import coil.annotation.ExperimentalCoilApi
 import coil.compose.rememberImagePainter
@@ -30,6 +29,7 @@ import dev.amal.borutoapp.presentation.components.OrderedList
 import dev.amal.borutoapp.ui.theme.*
 import dev.amal.borutoapp.util.Constants.ABOUT_TEXT_MAX_LINES
 import dev.amal.borutoapp.util.Constants.BASE_URL
+import dev.amal.borutoapp.util.Constants.MIN_BACKGROUND_IMAGE_HEIGHT
 
 @ExperimentalCoilApi
 @ExperimentalMaterialApi
@@ -44,9 +44,9 @@ fun DetailsContent(
     var onDarkVibrant by remember { mutableStateOf("#ffffff") }
 
     LaunchedEffect(key1 = selectedHero) {
-        vibrant = colors ["vibrant"]!!
-        darkVibrant = colors ["darkVibrant"]!!
-        onDarkVibrant = colors ["onDarkVibrant"]!!
+        vibrant = colors["vibrant"]!!
+        darkVibrant = colors["darkVibrant"]!!
+        onDarkVibrant = colors["onDarkVibrant"]!!
     }
 
     val systemUiController = rememberSystemUiController()

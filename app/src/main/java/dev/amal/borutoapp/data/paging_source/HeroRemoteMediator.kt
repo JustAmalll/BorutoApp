@@ -10,7 +10,6 @@ import dev.amal.borutoapp.data.local.BorutoDatabase
 import dev.amal.borutoapp.data.remote.BorutoApi
 import dev.amal.borutoapp.domain.model.Hero
 import dev.amal.borutoapp.domain.model.HeroRemoteKeys
-import java.lang.Exception
 import javax.inject.Inject
 
 @ExperimentalPagingApi

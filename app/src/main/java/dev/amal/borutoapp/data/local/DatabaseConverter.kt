@@ -1,7 +1,6 @@
 package dev.amal.borutoapp.data.local
 
 import androidx.room.TypeConverter
-import java.lang.StringBuilder
 
 class DatabaseConverter {
 
